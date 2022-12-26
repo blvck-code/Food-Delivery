@@ -175,7 +175,7 @@ const CustomDrawerContent = ({ navigation }) => {
   );
 };
 
-const CustomDrawer = () => {
+const CustomDrawer = ({ selectedTab, setSelectedTab }) => {
   const [progress, setProgress] = useState(new Animated.Value(0));
   const scale = Animated.interpolateNode(progress, {
     inputRange: [0, 1],
@@ -211,7 +211,13 @@ const CustomDrawer = () => {
           setTimeout(() => {
             setProgress(props.progress);
           }, 0);
-          return <CustomDrawerContent navigation={props.navigation} />;
+          return (
+            <CustomDrawerContent
+              navigation={props.navigation}
+              selectedTab={selectedTab}
+              setSelectedTab={setSelectedTab}
+            />
+          );
         }}
       >
         <Drawer.Screen name="MainLayout">
@@ -224,8 +230,6 @@ const CustomDrawer = () => {
   );
 };
 
-export default CustomDrawer;
-
 function mapStateToProps(state) {
   selectedTab: state.tabReducer.selectedTab;
 }
@@ -236,4 +240,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CustomDrawer)
+export default connect(mapStateToProps, mapDispatchToProps)(CustomDrawer);
