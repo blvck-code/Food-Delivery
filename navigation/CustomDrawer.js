@@ -16,6 +16,8 @@ import {
   dummyData,
 } from "../constants";
 import Animated from "react-native-reanimated";
+import { connect } from "react-redux";
+import { setSelectedTab } from "../stores/tabs/tabActions";
 
 const Drawer = createDrawerNavigator();
 
@@ -223,3 +225,15 @@ const CustomDrawer = () => {
 };
 
 export default CustomDrawer;
+
+function mapStateToProps(state) {
+  selectedTab: state.tabReducer.selectedTab;
+}
+
+function mapDispatchToProps(dispatch) {
+  setSelectedTab: (seletectTab) => {
+    return dispatch(setSelectedTab(seletectTab));
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CustomDrawer)
