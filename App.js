@@ -8,6 +8,7 @@ import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import rootReducer from "./stores/rootReducer";
+import { StatusBar } from "react-native";
 
 const Stack = createStackNavigator();
 
@@ -16,6 +17,7 @@ const store = createStore(rootReducer, applyMiddleware(thunk));
 const App = () => {
   return (
     <Provider store={store}>
+      <StatusBar backgroundColor="transparent" barStyle="dark-content" />
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{

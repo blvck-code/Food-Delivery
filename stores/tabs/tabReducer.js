@@ -9,7 +9,7 @@ const tabReducer = (state = initialState, action) => {
     case tabActions.SET_SELECTED_TAB:
       return {
         ...state,
-        selectedTab: action.payload.selectedTabe,
+        selectedTab: action.payload.selectedTab,
       };
     default:
       return state;
