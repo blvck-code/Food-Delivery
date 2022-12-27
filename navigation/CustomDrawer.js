@@ -258,8 +258,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    setSelectedTab: (seletectTab) => {
-      return dispatch(setSelectedTab(seletectTab));
+    setSelectedTab: (selectedTab) => {
+      return dispatch(setSelectedTab(selectedTab));
     },
   };
 }
