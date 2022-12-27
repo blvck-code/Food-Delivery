@@ -297,7 +297,7 @@ const MainLayout = ({
       {/*Footer */}
       <View
         style={{
-          height: 100,
+          height: 70,
           justifyContent: "flex-end",
         }}
       >
@@ -311,9 +311,8 @@ const MainLayout = ({
             top: -20,
             left: 0,
             right: 0,
-            height: 100,
-            borderTopLeftRadius: 15,
-            borderTopRightRadius: 15,
+            height: 80,
+            borderRadius: 15,
           }}
         />
         {/*Tabs */}
@@ -323,8 +322,7 @@ const MainLayout = ({
             flexDirection: "row",
             paddingHorizontal: SIZES.radius,
             paddingBottom: 10,
-            borderTopLeftRadius: 20,
-            borderTopRightRadius: 20,
+            borderRadius: 20,
             backgroundColor: COLORS.white,
           }}
         >
