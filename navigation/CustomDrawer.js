@@ -4,9 +4,7 @@ import {
   createDrawerNavigator,
   DrawerContentScrollView,
 } from "@react-navigation/drawer";
-
 import { MainLayout } from "../screens";
-
 import {
   COLORS,
   FONTS,
